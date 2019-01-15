@@ -1,5 +1,5 @@
 # Xamarin Forms Generic Host
-[![Build status](https://dev.azure.com/jamiewest/AppCenterLogger/_apis/build/status/AppCenterLogger-CI)](https://dev.azure.com/jamiewest/AppCenterLogger/_build/latest?definitionId=27)
+[![Build status](https://dev.azure.com/jamiewest/XamarinFormsHost/_apis/build/status/XamarinFormsHost-CI)](https://dev.azure.com/jamiewest/XamarinFormsHost/_build/latest?definitionId=28)
 
 A Xamarin Forms ```IHostLifetime``` implementation for `Microsoft.Extensions.Logging`. 
 
