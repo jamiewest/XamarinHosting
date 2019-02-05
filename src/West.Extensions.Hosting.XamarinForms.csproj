@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Authors>Jamie West</Authors>
@@ -7,14 +7,14 @@
     <PackageId>West.Extensions.Hosting.XamarinForms</PackageId>
     <Title>West.Extensions.Hosting.XamarinForms</Title>
     <Description>Xamarin Forms IHostLifetime implementation for Microsoft.Extensions.Hosting.</Description>
-    <VersionPrefix>2.2.0</VersionPrefix>
+    <VersionPrefix>2.2.1</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageTags>Xamarin Forms;Hosting;</PackageTags>
-    <PackageReleaseNotes>Version 2.2.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 2.2.1</PackageReleaseNotes>
     <PackageLicenseUrl>https://github.com/jamiewest/XamarinFormsHost/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
@@ -22,6 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
   </ItemGroup>

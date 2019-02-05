@@ -1,7 +1,7 @@
 # Xamarin Forms Generic Host
 [![Build status](https://dev.azure.com/jamiewest/XamarinFormsHost/_apis/build/status/XamarinFormsHost-CI)](https://dev.azure.com/jamiewest/XamarinFormsHost/_build/latest?definitionId=28)
 
-A Xamarin Forms ```IHostLifetime``` implementation for `Microsoft.Extensions.Logging`. 
+A Xamarin Forms ```IHostLifetime``` implementation for `Microsoft.Extensions.Hosting`. 
 
 ## Example Usage
 ```csharp
