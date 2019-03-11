@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.Extensions.Logging;
 
@@ -8,13 +7,11 @@ namespace Microsoft.Extensions.Hosting
     /// <summary>
     /// Allows consumers to perform cleanup during a graceful shutdown.
     /// </summary>
-    public class XamarinApplicationLifetime : ApplicationLifetime, IXamarinApplicationLifetime
+    public class XamarinLifetime : ApplicationLifetime, IXamarinLifetime
     {
-        
-        private readonly IDictionary<string, Action> _resumingSource = new Dictionary<string, Action>();
         private readonly ILogger _logger;
 
-        public XamarinApplicationLifetime(ILogger<ApplicationLifetime> logger) : base(logger)
+        public XamarinLifetime(ILogger<ApplicationLifetime> logger) : base(logger)
         {
             _logger = logger;
             ApplicationSleeping = new LifecycleRegister();

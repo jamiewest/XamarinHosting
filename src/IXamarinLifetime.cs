@@ -3,7 +3,7 @@ namespace Microsoft.Extensions.Hosting
     /// <summary>
     /// Allows consumers to perform cleanup during application sleep/resume.
     /// </summary>
-    public interface IXamarinApplicationLifetime : IApplicationLifetime
+    public interface IXamarinLifetime : IHostApplicationLifetime
     {
         /// <summary>
         /// Triggered when the application has gone to sleep.

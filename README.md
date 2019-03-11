@@ -1,12 +1,12 @@
 # Xamarin Forms Generic Host
-[![Build status](https://dev.azure.com/jamiewest/XamarinFormsHost/_apis/build/status/XamarinFormsHost-CI)](https://dev.azure.com/jamiewest/XamarinFormsHost/_build/latest?definitionId=28)
+[![Build status](https://dev.azure.com/jamiewest/XamarinHosting/_apis/build/status/XamarinFormsHost-CI)](https://dev.azure.com/jamiewest/XamarinFormsHost/_build/latest?definitionId=28)
 
-A Xamarin Forms ```IHostLifetime``` implementation for `Microsoft.Extensions.Hosting`. 
+A Xamarin generic host implementation for `Microsoft.Extensions.Hosting`. 
 
 ## Simple Example Usage
 ```csharp
     var host = new HostBuilder()
-        .UseXamarinFormsLifetime()
+        .UseXamarinLifetime()
 ```
 
 ## Generic Host Example
@@ -31,7 +31,7 @@ namespace DockerApp
 
         public static IHost Host { get; private set; }
 
-        private XamarinApplicationLifetime Lifetime { get; set; }
+        private XamarinLifetime Lifetime { get; set; }
 
         public static IHostBuilder BuildHost() =>
             new HostBuilder()
@@ -60,12 +60,12 @@ namespace DockerApp
                     logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
                     logging.AddDebug();
                 })
-                .UseXamarinFormsLifetime();
+                .UseXamarinLifetime();
 
         protected override void OnStart()
         {
             Lifetime =
-                Host.Services.GetRequiredService<IApplicationLifetime>() as XamarinApplicationLifetime;
+                Host.Services.GetRequiredService<IHostApplicationLifetime>() as XamarinLifetime;
             
             Host.Start();
         }
@@ -86,12 +86,12 @@ namespace DockerApp
 Required .csproj packages
 ```xml
 <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
   </ItemGroup>
 ```
 

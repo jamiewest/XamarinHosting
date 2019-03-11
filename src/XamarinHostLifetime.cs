@@ -7,40 +7,47 @@ using Microsoft.Extensions.Options;
 
 namespace Microsoft.Extensions.Hosting
 {
-    public class XamarinFormsLifetime : IHostLifetime, IDisposable
+    public class XamarinHostLifetime : IHostLifetime, IDisposable
     {
         private CancellationTokenRegistration _applicationStartedRegistration;
 
-        public XamarinFormsLifetime(IOptions<XamarinFormsLifetimeOptions> options, IHostingEnvironment environment, IApplicationLifetime applicationLifetime)
+        public XamarinHostLifetime(
+            IOptions<XamarinFormsHostLifetimeOptions> options, 
+            IHostEnvironment environment, 
+            IHostApplicationLifetime applicationLifetime)
             : this(options, environment, applicationLifetime, NullLoggerFactory.Instance) { }
 
-        public XamarinFormsLifetime(IOptions<XamarinFormsLifetimeOptions> options, IHostingEnvironment environment, IApplicationLifetime applicationLifetime, ILoggerFactory loggerFactory)
+        public XamarinHostLifetime(
+            IOptions<XamarinFormsHostLifetimeOptions> options, 
+            IHostEnvironment environment, 
+            IHostApplicationLifetime applicationLifetime, 
+            ILoggerFactory loggerFactory)
         {
             Options = options?.Value ?? throw new ArgumentNullException(nameof(options));
             Environment = environment ?? throw new ArgumentNullException(nameof(environment));
-            ApplicationLifetime = applicationLifetime ?? throw new ArgumentNullException(nameof(applicationLifetime));
+            Lifetime = applicationLifetime ?? throw new ArgumentNullException(nameof(applicationLifetime));
             Logger = loggerFactory.CreateLogger("Microsoft.Extensions.Hosting.Host");
         }
 
-        private XamarinFormsLifetimeOptions Options { get; }
+        private IHostEnvironment Environment { get; }
 
-        private IHostingEnvironment Environment { get; }
-
-        private IApplicationLifetime ApplicationLifetime { get; }
+        private IHostApplicationLifetime Lifetime { get; }
 
         private ILogger Logger { get; }
+
+        private XamarinFormsHostLifetimeOptions Options { get; }
 
         public Task WaitForStartAsync(CancellationToken cancellationToken)
         {
             if (!Options.SuppressStatusMessages)
             {
-                _applicationStartedRegistration = ApplicationLifetime.ApplicationStarted.Register(state =>
+                _applicationStartedRegistration = Lifetime.ApplicationStarted.Register(state =>
                 {
-                    ((XamarinFormsLifetime)state).OnApplicationStarted();
+                    ((XamarinHostLifetime)state).OnApplicationStarted();
                 },
                 this);
             }
-
+            
             return Task.CompletedTask;
         }
 
