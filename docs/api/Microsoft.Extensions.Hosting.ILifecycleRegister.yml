@@ -1,0 +1,93 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Extensions.Hosting.ILifecycleRegister
+  commentId: T:Microsoft.Extensions.Hosting.ILifecycleRegister
+  id: ILifecycleRegister
+  parent: Microsoft.Extensions.Hosting
+  children:
+  - Microsoft.Extensions.Hosting.ILifecycleRegister.Register(System.Action)
+  langs:
+  - csharp
+  - vb
+  name: ILifecycleRegister
+  nameWithType: ILifecycleRegister
+  fullName: Microsoft.Extensions.Hosting.ILifecycleRegister
+  type: Interface
+  source:
+    remote:
+      path: src/Abstractions/ILifecycleRegister.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: ILifecycleRegister
+    path: ../../src/Abstractions/ILifecycleRegister.cs
+    startLine: 7
+  assemblies:
+  - West.Extensions.XamarinHosting.Abstractions
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nHandles registration of events.\n"
+  example: []
+  syntax:
+    content: public interface ILifecycleRegister
+    content.vb: Public Interface ILifecycleRegister
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Microsoft.Extensions.Hosting.ILifecycleRegister.Register(System.Action)
+  commentId: M:Microsoft.Extensions.Hosting.ILifecycleRegister.Register(System.Action)
+  id: Register(System.Action)
+  parent: Microsoft.Extensions.Hosting.ILifecycleRegister
+  langs:
+  - csharp
+  - vb
+  name: Register(Action)
+  nameWithType: ILifecycleRegister.Register(Action)
+  fullName: Microsoft.Extensions.Hosting.ILifecycleRegister.Register(System.Action)
+  type: Method
+  source:
+    remote:
+      path: src/Abstractions/ILifecycleRegister.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: Register
+    path: ../../src/Abstractions/ILifecycleRegister.cs
+    startLine: 13
+  assemblies:
+  - West.Extensions.XamarinHosting.Abstractions
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nRegisters a given callback.\n"
+  example: []
+  syntax:
+    content: void Register(Action callback)
+    parameters:
+    - id: callback
+      type: System.Action
+      description: The callback to be registered.
+    content.vb: Sub Register(callback As Action)
+  overload: Microsoft.Extensions.Hosting.ILifecycleRegister.Register*
+references:
+- uid: Microsoft.Extensions.Hosting
+  commentId: N:Microsoft.Extensions.Hosting
+  name: Microsoft.Extensions.Hosting
+  nameWithType: Microsoft.Extensions.Hosting
+  fullName: Microsoft.Extensions.Hosting
+- uid: Microsoft.Extensions.Hosting.ILifecycleRegister.Register*
+  commentId: Overload:Microsoft.Extensions.Hosting.ILifecycleRegister.Register
+  name: Register
+  nameWithType: ILifecycleRegister.Register
+  fullName: Microsoft.Extensions.Hosting.ILifecycleRegister.Register
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

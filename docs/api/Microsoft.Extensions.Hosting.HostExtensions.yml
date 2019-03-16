@@ -1,0 +1,448 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Extensions.Hosting.HostExtensions
+  commentId: T:Microsoft.Extensions.Hosting.HostExtensions
+  id: HostExtensions
+  parent: Microsoft.Extensions.Hosting
+  children:
+  - Microsoft.Extensions.Hosting.HostExtensions.Resume(Microsoft.Extensions.Hosting.IHost)
+  - Microsoft.Extensions.Hosting.HostExtensions.Sleep(Microsoft.Extensions.Hosting.IHost)
+  langs:
+  - csharp
+  - vb
+  name: HostExtensions
+  nameWithType: HostExtensions
+  fullName: Microsoft.Extensions.Hosting.HostExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Hosting/Extensions/HostExtensions.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: HostExtensions
+    path: ../src/Hosting/Extensions/HostExtensions.cs
+    startLine: 7
+  assemblies:
+  - West.Extensions.XamarinHosting
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nExtends the <xref href=\"Microsoft.Extensions.Hosting.IHost\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static class HostExtensions
+    content.vb: Public Module HostExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Microsoft.Extensions.Hosting.HostExtensions.Sleep(Microsoft.Extensions.Hosting.IHost)
+  commentId: M:Microsoft.Extensions.Hosting.HostExtensions.Sleep(Microsoft.Extensions.Hosting.IHost)
+  id: Sleep(Microsoft.Extensions.Hosting.IHost)
+  isExtensionMethod: true
+  parent: Microsoft.Extensions.Hosting.HostExtensions
+  langs:
+  - csharp
+  - vb
+  name: Sleep(IHost)
+  nameWithType: HostExtensions.Sleep(IHost)
+  fullName: Microsoft.Extensions.Hosting.HostExtensions.Sleep(Microsoft.Extensions.Hosting.IHost)
+  type: Method
+  source:
+    remote:
+      path: src/Hosting/Extensions/HostExtensions.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: Sleep
+    path: ../src/Hosting/Extensions/HostExtensions.cs
+    startLine: 13
+  assemblies:
+  - West.Extensions.XamarinHosting
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nSignals that the <xref href=\"Microsoft.Extensions.Hosting.IHost\" data-throw-if-not-resolved=\"false\"></xref> will be sleeping.\n"
+  example: []
+  syntax:
+    content: public static void Sleep(this IHost host)
+    parameters:
+    - id: host
+      type: Microsoft.Extensions.Hosting.IHost
+      description: The <xref href="Microsoft.Extensions.Hosting.IHost" data-throw-if-not-resolved="false"></xref> that is being extended.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub Sleep(host As IHost)
+  overload: Microsoft.Extensions.Hosting.HostExtensions.Sleep*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Microsoft.Extensions.Hosting.HostExtensions.Resume(Microsoft.Extensions.Hosting.IHost)
+  commentId: M:Microsoft.Extensions.Hosting.HostExtensions.Resume(Microsoft.Extensions.Hosting.IHost)
+  id: Resume(Microsoft.Extensions.Hosting.IHost)
+  isExtensionMethod: true
+  parent: Microsoft.Extensions.Hosting.HostExtensions
+  langs:
+  - csharp
+  - vb
+  name: Resume(IHost)
+  nameWithType: HostExtensions.Resume(IHost)
+  fullName: Microsoft.Extensions.Hosting.HostExtensions.Resume(Microsoft.Extensions.Hosting.IHost)
+  type: Method
+  source:
+    remote:
+      path: src/Hosting/Extensions/HostExtensions.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: Resume
+    path: ../src/Hosting/Extensions/HostExtensions.cs
+    startLine: 23
+  assemblies:
+  - West.Extensions.XamarinHosting
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nSignals that the <xref href=\"Microsoft.Extensions.Hosting.IHost\" data-throw-if-not-resolved=\"false\"></xref> will be resuming.\n"
+  example: []
+  syntax:
+    content: public static void Resume(this IHost host)
+    parameters:
+    - id: host
+      type: Microsoft.Extensions.Hosting.IHost
+      description: The <xref href="Microsoft.Extensions.Hosting.IHost" data-throw-if-not-resolved="false"></xref> that is being extended.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub Resume(host As IHost)
+  overload: Microsoft.Extensions.Hosting.HostExtensions.Resume*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Microsoft.Extensions.Hosting.IHost
+  commentId: T:Microsoft.Extensions.Hosting.IHost
+  parent: Microsoft.Extensions.Hosting
+  isExternal: true
+  name: IHost
+  nameWithType: IHost
+  fullName: Microsoft.Extensions.Hosting.IHost
+- uid: Microsoft.Extensions.Hosting
+  commentId: N:Microsoft.Extensions.Hosting
+  name: Microsoft.Extensions.Hosting
+  nameWithType: Microsoft.Extensions.Hosting
+  fullName: Microsoft.Extensions.Hosting
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Extensions.Hosting.HostExtensions.Sleep*
+  commentId: Overload:Microsoft.Extensions.Hosting.HostExtensions.Sleep
+  name: Sleep
+  nameWithType: HostExtensions.Sleep
+  fullName: Microsoft.Extensions.Hosting.HostExtensions.Sleep
+- uid: Microsoft.Extensions.Hosting.HostExtensions.Resume*
+  commentId: Overload:Microsoft.Extensions.Hosting.HostExtensions.Resume
+  name: Resume
+  nameWithType: HostExtensions.Resume
+  fullName: Microsoft.Extensions.Hosting.HostExtensions.Resume

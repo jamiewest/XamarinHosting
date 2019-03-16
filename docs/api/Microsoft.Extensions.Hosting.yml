@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Extensions.Hosting
+  commentId: N:Microsoft.Extensions.Hosting
+  id: Microsoft.Extensions.Hosting
+  children:
+  - Microsoft.Extensions.Hosting.HostBuilderExtensions
+  - Microsoft.Extensions.Hosting.HostExtensions
+  - Microsoft.Extensions.Hosting.ILifecycleRegister
+  - Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
+  - Microsoft.Extensions.Hosting.LifecycleRegister
+  - Microsoft.Extensions.Hosting.XamarinHost
+  - Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime
+  - Microsoft.Extensions.Hosting.XamarinHostLifetime
+  - Microsoft.Extensions.Hosting.XamarinHostLifetimeOptions
+  langs:
+  - csharp
+  - vb
+  name: Microsoft.Extensions.Hosting
+  nameWithType: Microsoft.Extensions.Hosting
+  fullName: Microsoft.Extensions.Hosting
+  type: Namespace
+  assemblies:
+  - West.Extensions.XamarinHosting.Abstractions
+references:
+- uid: Microsoft.Extensions.Hosting.ILifecycleRegister
+  commentId: T:Microsoft.Extensions.Hosting.ILifecycleRegister
+  parent: Microsoft.Extensions.Hosting
+  name: ILifecycleRegister
+  nameWithType: ILifecycleRegister
+  fullName: Microsoft.Extensions.Hosting.ILifecycleRegister
+- uid: Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
+  commentId: T:Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
+  parent: Microsoft.Extensions.Hosting
+  name: IXamarinHostApplicationLifetime
+  nameWithType: IXamarinHostApplicationLifetime
+  fullName: Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
+- uid: Microsoft.Extensions.Hosting.HostBuilderExtensions
+  commentId: T:Microsoft.Extensions.Hosting.HostBuilderExtensions
+  name: HostBuilderExtensions
+  nameWithType: HostBuilderExtensions
+  fullName: Microsoft.Extensions.Hosting.HostBuilderExtensions
+- uid: Microsoft.Extensions.Hosting.HostExtensions
+  commentId: T:Microsoft.Extensions.Hosting.HostExtensions
+  name: HostExtensions
+  nameWithType: HostExtensions
+  fullName: Microsoft.Extensions.Hosting.HostExtensions
+- uid: Microsoft.Extensions.Hosting.LifecycleRegister
+  commentId: T:Microsoft.Extensions.Hosting.LifecycleRegister
+  name: LifecycleRegister
+  nameWithType: LifecycleRegister
+  fullName: Microsoft.Extensions.Hosting.LifecycleRegister
+- uid: Microsoft.Extensions.Hosting.XamarinHost
+  commentId: T:Microsoft.Extensions.Hosting.XamarinHost
+  name: XamarinHost
+  nameWithType: XamarinHost
+  fullName: Microsoft.Extensions.Hosting.XamarinHost
+- uid: Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime
+  commentId: T:Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime
+  name: XamarinHostApplicationLifetime
+  nameWithType: XamarinHostApplicationLifetime
+  fullName: Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime
+- uid: Microsoft.Extensions.Hosting.XamarinHostLifetime
+  commentId: T:Microsoft.Extensions.Hosting.XamarinHostLifetime
+  name: XamarinHostLifetime
+  nameWithType: XamarinHostLifetime
+  fullName: Microsoft.Extensions.Hosting.XamarinHostLifetime
+- uid: Microsoft.Extensions.Hosting.XamarinHostLifetimeOptions
+  commentId: T:Microsoft.Extensions.Hosting.XamarinHostLifetimeOptions
+  name: XamarinHostLifetimeOptions
+  nameWithType: XamarinHostLifetimeOptions
+  fullName: Microsoft.Extensions.Hosting.XamarinHostLifetimeOptions
+- uid: Microsoft.Extensions.Hosting
+  commentId: N:Microsoft.Extensions.Hosting
+  name: Microsoft.Extensions.Hosting
+  nameWithType: Microsoft.Extensions.Hosting
+  fullName: Microsoft.Extensions.Hosting

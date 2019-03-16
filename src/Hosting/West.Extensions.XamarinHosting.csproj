@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>Jamie West</Authors>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyName>West.Extensions.XamarinHosting</AssemblyName>
+    <PackageId>West.Extensions.XamarinHosting</PackageId>
+    <Title>West.Extensions.XamarinHosting</Title>
+    <Description>Xamarin generic host implementation for Microsoft.Extensions.Hosting.</Description>
+    <VersionPrefix>3.0.2-beta</VersionPrefix>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTags>Xamarin;Hosting;</PackageTags>
+    <PackageReleaseNotes>Version 3.0.2</PackageReleaseNotes>
+    <PackageLicenseUrl>https://github.com/jamiewest/XamarinHosting/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/jamiewest/XamarinHosting</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.0.0-preview4.19158.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0-preview4.19158.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abstractions\West.Extensions.XamarinHosting.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

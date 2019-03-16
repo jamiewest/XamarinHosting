@@ -1,0 +1,22 @@
+### YamlMime:TableOfContent
+- uid: Microsoft.Extensions.Hosting
+  name: Microsoft.Extensions.Hosting
+  items:
+  - uid: Microsoft.Extensions.Hosting.HostBuilderExtensions
+    name: HostBuilderExtensions
+  - uid: Microsoft.Extensions.Hosting.HostExtensions
+    name: HostExtensions
+  - uid: Microsoft.Extensions.Hosting.ILifecycleRegister
+    name: ILifecycleRegister
+  - uid: Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
+    name: IXamarinHostApplicationLifetime
+  - uid: Microsoft.Extensions.Hosting.LifecycleRegister
+    name: LifecycleRegister
+  - uid: Microsoft.Extensions.Hosting.XamarinHost
+    name: XamarinHost
+  - uid: Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime
+    name: XamarinHostApplicationLifetime
+  - uid: Microsoft.Extensions.Hosting.XamarinHostLifetime
+    name: XamarinHostLifetime
+  - uid: Microsoft.Extensions.Hosting.XamarinHostLifetimeOptions
+    name: XamarinHostLifetimeOptions

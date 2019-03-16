@@ -12,13 +12,13 @@ namespace Microsoft.Extensions.Hosting
         private CancellationTokenRegistration _applicationStartedRegistration;
 
         public XamarinHostLifetime(
-            IOptions<XamarinFormsHostLifetimeOptions> options, 
+            IOptions<XamarinHostLifetimeOptions> options, 
             IHostEnvironment environment, 
             IHostApplicationLifetime applicationLifetime)
             : this(options, environment, applicationLifetime, NullLoggerFactory.Instance) { }
 
         public XamarinHostLifetime(
-            IOptions<XamarinFormsHostLifetimeOptions> options, 
+            IOptions<XamarinHostLifetimeOptions> options, 
             IHostEnvironment environment, 
             IHostApplicationLifetime applicationLifetime, 
             ILoggerFactory loggerFactory)
@@ -35,7 +35,7 @@ namespace Microsoft.Extensions.Hosting
 
         private ILogger Logger { get; }
 
-        private XamarinFormsHostLifetimeOptions Options { get; }
+        private XamarinHostLifetimeOptions Options { get; }
 
         public Task WaitForStartAsync(CancellationToken cancellationToken)
         {

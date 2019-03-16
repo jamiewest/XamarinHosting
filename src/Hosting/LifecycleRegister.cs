@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Extensions.Hosting
 {
-    public class LifecycleRegister
+    public class LifecycleRegister : ILifecycleRegister
     {
         private readonly HashSet<Action> _callbacks = new HashSet<Action>();
 

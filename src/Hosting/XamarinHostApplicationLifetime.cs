@@ -7,20 +7,31 @@ namespace Microsoft.Extensions.Hosting
     /// <summary>
     /// Allows consumers to perform cleanup during a graceful shutdown.
     /// </summary>
-    public class XamarinLifetime : ApplicationLifetime, IXamarinLifetime
+    public class XamarinHostApplicationLifetime : ApplicationLifetime, IXamarinHostApplicationLifetime
     {
         private readonly ILogger _logger;
 
-        public XamarinLifetime(ILogger<ApplicationLifetime> logger) : base(logger)
+        /// <summary>
+        /// Creates a new instance of <see cref="XamarinHostApplicationLifetime"/>.
+        /// </summary>
+        /// <param name="logger">The <see cref="ILogger"/> used to log messages.</param>
+        public XamarinHostApplicationLifetime(ILogger<ApplicationLifetime> logger) : base(logger)
         {
             _logger = logger;
             ApplicationSleeping = new LifecycleRegister();
             ApplicationResuming = new LifecycleRegister();
         }
 
-        public LifecycleRegister ApplicationSleeping { get; }
+        /// <summary>
+        /// Triggered when the application host has gone to sleep.
+        /// </summary>
+        public ILifecycleRegister ApplicationSleeping { get; }
 
-        public LifecycleRegister ApplicationResuming { get; }
+        /// <summary>
+        /// Triggered when the application host is resuming.
+        /// </summary>
+
+        public ILifecycleRegister ApplicationResuming { get; }
 
         /// <summary>
         /// Signals the ApplicationSleeping event and blocks until it completes.
@@ -29,7 +40,7 @@ namespace Microsoft.Extensions.Hosting
         {
             try
             {
-                ApplicationSleeping.Notify();
+                (ApplicationSleeping as LifecycleRegister).Notify();
             }
             catch (Exception ex)
             {
@@ -48,7 +59,7 @@ namespace Microsoft.Extensions.Hosting
         {
             try
             {
-                ApplicationResuming.Notify();
+                (ApplicationResuming as LifecycleRegister).Notify();
             }
             catch (Exception ex)
             {
