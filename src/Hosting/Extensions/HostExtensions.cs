@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,12 +30,23 @@ namespace Microsoft.Extensions.Hosting
         public static async Task SleepAsync(this IHost host, CancellationToken cancellationToken = default)
         {
             var hostedServices = host.Services.GetService<IEnumerable<IHostedService>>();
-            foreach (var hostedService in hostedServices)
+
+            IList<Exception> exceptions = new List<Exception>();
+            if (hostedServices != null)
+            foreach (var hostedService in hostedServices.Reverse())
             {
-                // Fire IXamarinHostedService.Sleep
-                if (hostedService is IXamarinHostedService service)
+                cancellationToken.ThrowIfCancellationRequested();
+                try
                 {
-                    await service.SleepAsync(cancellationToken).ConfigureAwait(false);
+                    // Fire IXamarinHostedService.Sleep
+                    if (hostedService is IXamarinHostedService service)
+                    {
+                        await service.SleepAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    exceptions.Add(ex);
                 }
             }
             
@@ -41,6 +54,14 @@ namespace Microsoft.Extensions.Hosting
             lifetime?.NotifySleeping();
 
             var logger = host.Services.GetRequiredService<ILogger<IHost>>();
+
+            if (exceptions.Count > 0)
+            {
+                var ex = new AggregateException("One or more hosted services failed to stop.", exceptions);
+                logger.StoppedWithException(ex);
+                throw ex;
+            }
+
             logger.Sleeping();
         }
 

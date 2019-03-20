@@ -6,15 +6,25 @@
     <AssemblyName>West.Extensions.XamarinHosting</AssemblyName>
     <PackageId>West.Extensions.XamarinHosting</PackageId>
     <Title>West.Extensions.XamarinHosting</Title>
-    <Description>Xamarin generic host implementation for Microsoft.Extensions.Hosting.</Description>
-    <VersionPrefix>3.0.0-preview</VersionPrefix>
+    <Description>Hosting and startup infrastructures for Xamarin.Forms applications.</Description>
+    <PackageDescription>Extends the Microsoft.Extensions.Hosting Generic Host for Xamarin.Forms.
+
+Easily use the following libraries from within a Xamarin.Forms application:
+
+Microsoft.Extensions.Configuration
+Microsoft.Extensions.Localization
+Microsoft.Extensions.Logging
+Microsoft.Extensions.DependencyInjection
+Microsoft.Extensions.FileProviders
+    </PackageDescription>
+    <VersionPrefix>3.0.0-preview1</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>7.2</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageTags>Xamarin;Hosting;</PackageTags>
+    <PackageTags>xamarin;hosting;</PackageTags>
     <PackageReleaseNotes>Version 3.0.0</PackageReleaseNotes>
     <PackageLicenseUrl>https://github.com/jamiewest/XamarinHosting/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

@@ -42,6 +42,17 @@ namespace Microsoft.Extensions.Hosting.Internal
                     message: "Application resuming");
             }
         }
+
+        public static void StoppedWithException(this ILogger logger, Exception ex)
+        {
+            if (logger.IsEnabled(LogLevel.Debug))
+            {
+                logger.LogDebug(
+                    eventId: LoggerEventIds.StoppedWithException,
+                    exception: ex,
+                    message: "Hosting shutdown exception");
+            }
+        }
     }
 }
 

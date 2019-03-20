@@ -6,15 +6,15 @@
     <AssemblyName>West.Extensions.XamarinHosting.Abstractions</AssemblyName>
     <PackageId>West.Extensions.XamarinHosting.Abstractions</PackageId>
     <Title>West.Extensions.XamarinHosting.Abstractions</Title>
-    <Description>Xamarin generic host implementation for Microsoft.Extensions.Hosting.</Description>
-    <VersionPrefix>3.0.0-preview</VersionPrefix>
+    <Description>Hosting and startup abstractions for Xamarin.Forms applications.</Description>
+    <VersionPrefix>3.0.0-preview1</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>7.2</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageTags>Xamarin;Hosting;</PackageTags>
+    <PackageTags>xamarin;hosting;</PackageTags>
     <PackageReleaseNotes>Version 3.0.0-preview</PackageReleaseNotes>
     <PackageLicenseUrl>https://github.com/jamiewest/XamarinHosting/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
