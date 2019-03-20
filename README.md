@@ -1,6 +1,7 @@
-# Xamarin Generic Host
+# Xamarin.Forms Generic Host
 [![Build status](https://dev.azure.com/jamiewest/XamarinHosting/_apis/build/status/XamarinHosting-CI)](https://dev.azure.com/jamiewest/XamarinHosting/_build/latest?definitionId=28)
-A Xamarin generic host implementation for `Microsoft.Extensions.Hosting`. 
+
+A Xamarin.Forms generic host implementation for `Microsoft.Extensions.Hosting`. 
 
 ## Setup
 Decorate the ```App``` class like this:
@@ -22,18 +23,18 @@ public partial class App : Application
 
     protected override void OnStart()
     {
-        Host.Start();
+        Task.Run(async () => await Host.StartAsync());
         MainPage = Host.Services.GetRequiredService<MainPage>();
     }
 
     protected override void OnSleep()
     {
-        Host.Sleep();
+        Task.Run(async () => await Host.SleepAsync());
     }
 
     protected override void OnResume()
     {
-        Host.Resume();
+        Task.Run(async () => await Host.ResumeAsync());
     }
 }
 ```
