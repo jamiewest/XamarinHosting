@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hosted Services | Xamarin Hosting Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Hosted Services | Xamarin Hosting Documentation ">
+    <meta name="generator" content="docfx 2.40.12.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                  </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hosted-services">Hosted Services</h1>
+
+<p>The <code>Microsoft.Extensions.Hosting</code> package contains the interface <code>IHostedService</code> and the base class <code>BackgroundService</code>. These start and stop when the <code>Host</code> does, but in Xamarin.Forms we need to be able to sleep and resume services.</p>
+<p>Here is the <code>IXamarinHostedService</code> interface that extends the <code>IHostedService</code>.</p>
+<pre><code class="lang-csharp">using System.Threading;
+using System.Threading.Tasks;
+
+namespace Microsoft.Extensions.Hosting
+{
+    /// &lt;summary&gt;
+    /// Defines methods for objects that are managed by the host.
+    /// &lt;/summary&gt;
+    public interface IXamarinHostedService : IHostedService
+    {
+        /// &lt;summary&gt;
+        /// Triggered when the application host is ready to sleep.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;cancellationToken&quot;&gt;Indicates that the sleep process has been aborted.&lt;/param&gt;
+        Task SleepAsync(CancellationToken cancellationToken);
+
+        /// &lt;summary&gt;
+        /// Triggered when the application host is ready to resume.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;cancellationToken&quot;&gt;Indicates that the resume process has been aborted.&lt;/param&gt;
+        Task ResumeAsync(CancellationToken cancellationToken);
+    }
+}
+</code></pre>
+<p>The <code>App.xaml.cs</code> contians the OnSleep() and OnResume() methods that in turn call the Host.SleepAsync() and Host.Resume() methods respectively. These are then called on every registered HostedService and also on any registered callbacks set by the <code>XamarinHostApplicationLifetime</code> instance.</p>
+<pre><code class="lang-csharp">protected override void OnSleep()
+{
+    Task.Run(async () =&gt; await Host.SleepAsync());
+}
+
+protected override void OnResume()
+{
+    Task.Run(async () =&gt; await Host.ResumeAsync());
+}
+</code></pre>
+<p>Also included is the <code>XamarinBackgroundService</code> class that extends <code>BackgroundService</code>. This makes setting up a service that will execute code at startup and resume executing code when returning from a sleep state simple.</p>
+<p>Here is an example service that will output some log messages every 5 seconds.</p>
+<pre><code class="lang-csharp">public class SimpleBackgroundService : XamarinBackgroundService
+{
+    public SimpleBackgroundService(ILogger&lt;SimpleBackgroundService&gt; logger) =&gt; Logger = logger;
+
+    public ILogger Logger { get; }
+
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        Logger.LogInformation(&quot;SimpleBackgroundService is starting...&quot;);
+
+        stoppingToken.Register(() =&gt;
+            Logger.LogInformation($&quot;SimpleBackgroundService is stopping...&quot;));
+        
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            Logger.LogInformation(&quot;SimpleBackgroundService is running...&quot;);
+            await Task.Delay(5000, stoppingToken);
+        }
+    }
+}
+</code></pre>
+<p>The <code>UseHostedService&lt;T&gt;</code> method can be called on the HostBuilder to simplify hosted service setup.</p>
+<pre><code class="lang-csharp">public static IHostBuilder BuildHost() =&gt; 
+        XamarinHost.CreateDefaultBuilder&lt;App&gt;()
+        .UseHostedService&lt;SimpleBackgroundService&gt;();
+</code></pre>
+<p>It can also be added directly in the ConfigureServices section.</p>
+<pre><code class="lang-csharp">public static IHostBuilder BuildHost() =&gt; 
+        XamarinHost.CreateDefaultBuilder&lt;App&gt;()
+        .ConfigureServices((context, services) =&gt; 
+        {
+            services.AddHostedService&lt;SimpleBackgroundService&gt;();
+        });
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/docs/docs/hosted-services.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+             
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

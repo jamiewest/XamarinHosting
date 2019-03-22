@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Started | Xamarin Hosting Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting Started | Xamarin Hosting Documentation ">
+    <meta name="generator" content="docfx 2.40.12.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                  </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="getting-started">Getting Started</h1>
+
+<p>This article will walk through the steps required to install and use the Generic Host from within a Xamarin.Forms application.</p>
+<h2 id="installation">Installation</h2>
+<p>You can add this library to your project using Nuget.</p>
+<p><strong>Package Manager Console</strong>
+Run the following command in the “Package Manager Console”:</p>
+<blockquote>
+<p>PM&gt; Install-Package West.Extensions.XamarinHosting</p>
+</blockquote>
+<p><strong>Visual Studio</strong>
+Right click to your project in Visual Studio, choose “Manage NuGet Packages” and search for ‘West.Extensions.XamarinHosting’ and click ‘Install’.</p>
+<h2 id="setup">Setup</h2>
+<p>Now that the package has been installed, we will need to update how the Xamarin.Forms <code>App</code> class is initialized on each platform.</p>
+<h3 id="app">App</h3>
+<p>Decorate the <code>App.xaml.cs</code> class like the example below:</p>
+<pre><code class="lang-csharp">public partial class App : Application
+{
+    public App() =&gt; InitializeComponent();
+
+    public App(IHost host) : this() =&gt; Host = host;
+
+    public static IHost Host { get; private set; }
+
+    public static IHostBuilder BuildHost() =&gt; 
+        XamarinHost.CreateDefaultBuilder&lt;App&gt;()
+        .ConfigureServices((context, services) =&gt; 
+        {
+            services.AddScoped&lt;MainPage&gt;();
+        });
+
+    protected override void OnStart()
+    {
+        Task.Run(async () =&gt; await Host.StartAsync());
+        MainPage = Host.Services.GetRequiredService&lt;MainPage&gt;();
+    }
+
+    protected override void OnSleep()
+    {
+        Task.Run(async () =&gt; await Host.SleepAsync());
+    }
+
+    protected override void OnResume()
+    {
+        Task.Run(async () =&gt; await Host.ResumeAsync());
+    }
+}
+</code></pre>
+<p>The static BuildHost() method will be called from each platform and returns the registered <code>App</code> instance that gets loaded. When the <code>App</code> instance is created, it receives the <code>IHost</code> from constructor injection and stores it as a static reference. This way the <code>IHost</code> is accessible throughout the Xamarin.Forms project along with it's services via the <code>Host.Services</code> property.</p>
+<h3 id="android">Android</h3>
+<p>Decorate the Android <code>MainActivity.cs</code> like below:</p>
+<pre><code class="lang-csharp">protected override void OnCreate(Bundle savedInstanceState)
+{
+    ...
+
+    var host = App.BuildHost()
+        .UseContentRoot(System.Environment.GetFolderPath(
+            System.Environment.SpecialFolder.Personal)).Build();
+
+    var application = host.Services.GetRequiredService&lt;App&gt;();
+
+    LoadApplication(application);
+
+    ...
+}
+</code></pre>
+<p>With Android we need to set the Content Root otherwise there is an error at startup.</p>
+<h3 id="ios">iOS</h3>
+<p>Decorate the iOS <code>AppDelegate.cs</code> like below:</p>
+<pre><code class="lang-csharp">public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+    ...
+    var host = App.BuildHost().Build();
+
+    var application = host.Services.GetRequiredService&lt;App&gt;();
+
+    LoadApplication(application);
+
+    ...
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/docs/docs/getting-started.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+             
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

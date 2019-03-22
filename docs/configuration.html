@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Configuration | Xamarin Hosting Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Configuration | Xamarin Hosting Documentation ">
+    <meta name="generator" content="docfx 2.40.12.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                  </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="configuration">Configuration</h1>
+
+<p>Application configuration can be achieved using key-value pairs established by configuration providers. Using Xamarin.Forms you will most likely use Settings files, In-memory, or potentially a custom provider.</p>
+<h2 id="default-builder">Default Builder</h2>
+<p>The <code>XamarinHost.CreateDefaultBuilder&lt;TAppplication&gt;()</code> method includes setup of both <strong>appsettings.json</strong> and <strong>appsettings.{EnvinromentName}.json</strong> files using an <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider">EmbeddedFileProvider</a>. The <code>EmbeddedFileProvider</code> will look in the same assembly where the <code>TApplication</code> class is located.</p>
+<blockquote>
+<p>Both the <strong>appsettings.json</strong> and <strong>appsettings.{EnvinromentName}.json</strong> will need to the Build Action set to <em>Embedded resource</em> in Visual Studio in order to accessible to the <code>EmbeddedFileProvider</code>.</p>
+</blockquote>
+<p>This is what the definition looks like when calling from the Xamarin.Forms <code>App</code> class.</p>
+<pre><code class="lang-csharp">public static IHostBuilder BuildHost() =&gt;
+    XamarinHost.CreateDefaultBuilder&lt;App&gt;();
+</code></pre>
+<p>Here is a look at what happens with configuration when the default builder is called.</p>
+<pre><code class="lang-csharp">public static IHostBuilder CreateDefaultBuilder&lt;TApplication&gt;() where TApplication : class
+{
+    ...
+            
+    builder.ConfigureAppConfiguration((hostingContext, config) =&gt;
+    {
+        var env = hostingContext.HostingEnvironment;
+        
+        config.SetFileProvider(new EmbeddedFileProvider(typeof(TApplication).Assembly));
+        config.AddJsonFile(&quot;appsettings.json&quot;, true);
+        config.AddJsonFile($&quot;appsettings.{env.EnvironmentName}.json&quot;, true);
+    })
+    
+    ...
+
+    return builder;
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/docs/docs/configuration.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+             
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

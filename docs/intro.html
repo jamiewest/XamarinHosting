@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Introduction to XamarinHosting | Xamarin Hosting Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Introduction to XamarinHosting | Xamarin Hosting Documentation ">
+    <meta name="generator" content="docfx 2.40.12.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                  </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="introduction-to-xamarinhosting">Introduction to XamarinHosting</h1>
+
+<p>The goal of this project is to enable the use of ASP.NET Core's <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host">Generic Host</a> to be consumed from a Xamarin.Forms application. The Generic Host makes it easy to add common application features such as <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration">configuration</a>, <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection">dependency injection</a>, <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization">localization</a>, <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging">logging</a>, and <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services">hosted services</a>.</p>
+<h2 id="why">Why?</h2>
+<p>Why do we need this when there are so many existing frameworks for Xamarin.Forms?</p>
+<p>I wanted to be able to develop Xamarin.Forms applications in a similar style to ASP.NET Core applications. Using the Generic Host in Xamarin makes it easy to move back and forth between the platforms and to share more code. Microsoft has also invested and built a lot of infrastructure and support in the various projects that the Generic Host can consume. It is also very easy to swap out services through the use of various provider implementations.</p>
+<p>Examples of this include using the <a href="https://www.nuget.org/packages/DryIoc.Microsoft.DependencyInjection/">DryIoc</a> provider while still using the <code>Microsoft.Extensions.DependencyInjection</code> abstractions.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/docs/docs/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+             
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

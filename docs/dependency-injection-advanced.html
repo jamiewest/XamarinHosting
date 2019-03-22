@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Advanced DI | Xamarin Hosting Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Advanced DI | Xamarin Hosting Documentation ">
+    <meta name="generator" content="docfx 2.40.12.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                  </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="advanced-di">Advanced DI</h1>
+
+<p>A Xamarin.Forms project can container main views and view models and registering all of these in the DI container can be a chore. Luckily using extension methods on the <code>IServiceCollection</code>, we can author code to simplify the registration process.</p>
+<p>Here we have extension methods that will attempt to register any type located within a specified assembly that matches the given type parameter.</p>
+<pre><code class="lang-csharp">public static IServiceCollection AddAll&lt;T&gt;(this IServiceCollection services)
+{
+    return AddAll&lt;T&gt;(services, Assembly.GetExecutingAssembly());
+}
+
+public static IServiceCollection AddAll&lt;T&gt;(this IServiceCollection services, Assembly assembly)
+{
+    var definedTypes = assembly.DefinedTypes.ToList();
+
+    foreach (var type in definedTypes)
+    {
+        if (!IsSameOrSubclass(type, typeof(T)))
+        {
+            continue;
+        }
+
+        if (!type.IsAbstract)
+        {
+            services.TryAddTransient(type);
+        }
+    }
+
+    bool IsSameOrSubclass(Type potentialBase, Type potentialDescendant)
+    {
+        return potentialDescendant.IsAssignableFrom(potentialBase)
+                || potentialDescendant == potentialBase;
+    }
+
+    return services;
+}
+</code></pre>
+<p>Often view models will inherit some sort of base class or interface, we can then use that as a target for finding and registering them.</p>
+<h3 id="add-views">Add views</h3>
+<p>Here we add views into DI that inherit an <code>IViewModel</code> interface.</p>
+<pre><code class="lang-csharp">public static IHostBuilder BuildHost() =&gt;
+    XamarinHost.CreateDefaultBuilder&lt;App&gt;()
+    .ConfigureServices((context, services) =&gt; 
+    {
+    services.AddAll&lt;IViewModel&gt;();
+    });
+</code></pre>
+<h3 id="add-pages">Add pages</h3>
+<p>In this example, we are adding anything that inherits from a Xamarin.Forms <code>Page</code>.</p>
+<pre><code class="lang-csharp">public static IHostBuilder BuildHost() =&gt;
+    XamarinHost.CreateDefaultBuilder&lt;App&gt;()
+    .ConfigureServices((context, services) =&gt; 
+    {
+        services.AddAll&lt;Page&gt;();
+    });
+</code></pre>
+<p>Now all of your pages and view models are in the DI, calling them is easy:</p>
+<h3 id="consuming">Consuming</h3>
+<p>Here we set the <code>App.MainPage</code> by obtaining page and view model from the DI container.</p>
+<pre><code class="lang-csharp">public void OnStart()
+{
+    var viewModel = Host.Services.GetRequiredService&lt;HomeViewModel&gt;();
+    var page = Host.Services.GetRequiredService&lt;HomeView&gt;();
+    page.BindingContext = viewModel;
+
+    MainPage = page;
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/docs/docs/dependency-injection-advanced.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+             
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

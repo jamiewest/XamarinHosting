@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class XamarinHostApplicationLifetime
+   | Xamarin Hosting Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class XamarinHostApplicationLifetime
+   | Xamarin Hosting Documentation ">
+    <meta name="generator" content="docfx 2.40.12.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                  </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime">
+  
+  
+  <h1 id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime" class="text-break">Class XamarinHostApplicationLifetime
+  </h1>
+  <div class="markdown level0 summary"><p>Allows consumers to perform cleanup during a graceful shutdown.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime</span></div>
+    <div class="level2"><span class="xref">XamarinHostApplicationLifetime</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">Microsoft.Extensions.Hosting.IApplicationLifetime</span></div>
+    <div><a class="xref" href="Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime.html">IXamarinHostApplicationLifetime</a></div>
+    <div><span class="xref">Microsoft.Extensions.Hosting.IHostApplicationLifetime</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.StopApplication()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStarted()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.NotifyStopped()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.ApplicationStarted</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.ApplicationStopping</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime.ApplicationStopped</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.Extensions.Hosting.html">Microsoft.Extensions.Hosting</a></h6>
+  <h6><strong>Assembly</strong>: West.Extensions.XamarinHosting.dll</h6>
+  <h5 id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class XamarinHostApplicationLifetime : ApplicationLifetime, IApplicationLifetime, IXamarinHostApplicationLifetime, IHostApplicationLifetime</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jamiewest/XamarinFormsHost/new/master/apiSpec/new?filename=Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime__ctor_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Hosting_Internal_ApplicationLifetime__.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.%23ctor(Microsoft.Extensions.Logging.ILogger%7BMicrosoft.Extensions.Hosting.Internal.ApplicationLifetime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/src/Hosting/XamarinHostApplicationLifetime.cs/#L18">View Source</a>
+  </span>
+  <a id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime__ctor_" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.#ctor*"></a>
+  <h4 id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime__ctor_Microsoft_Extensions_Logging_ILogger_Microsoft_Extensions_Hosting_Internal_ApplicationLifetime__" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.#ctor(Microsoft.Extensions.Logging.ILogger{Microsoft.Extensions.Hosting.Internal.ApplicationLifetime})">XamarinHostApplicationLifetime(ILogger&lt;ApplicationLifetime&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.html">XamarinHostApplicationLifetime</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public XamarinHostApplicationLifetime(ILogger&lt;ApplicationLifetime&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Logging.ILogger</span>&lt;<span class="xref">Microsoft.Extensions.Hosting.Internal.ApplicationLifetime</span>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The <span class="xref">Microsoft.Extensions.Logging.ILogger</span> used to log messages.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jamiewest/XamarinFormsHost/new/master/apiSpec/new?filename=Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_ApplicationResuming.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.ApplicationResuming%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/src/Hosting/XamarinHostApplicationLifetime.cs/#L34">View Source</a>
+  </span>
+  <a id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_ApplicationResuming_" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.ApplicationResuming*"></a>
+  <h4 id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_ApplicationResuming" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.ApplicationResuming">ApplicationResuming</h4>
+  <div class="markdown level1 summary"><p>Triggered when the application host is resuming.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILifecycleRegister ApplicationResuming { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Microsoft.Extensions.Hosting.ILifecycleRegister.html">ILifecycleRegister</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jamiewest/XamarinFormsHost/new/master/apiSpec/new?filename=Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_ApplicationSleeping.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.ApplicationSleeping%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/src/Hosting/XamarinHostApplicationLifetime.cs/#L28">View Source</a>
+  </span>
+  <a id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_ApplicationSleeping_" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.ApplicationSleeping*"></a>
+  <h4 id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_ApplicationSleeping" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.ApplicationSleeping">ApplicationSleeping</h4>
+  <div class="markdown level1 summary"><p>Triggered when the application host has gone to sleep.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILifecycleRegister ApplicationSleeping { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Microsoft.Extensions.Hosting.ILifecycleRegister.html">ILifecycleRegister</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jamiewest/XamarinFormsHost/new/master/apiSpec/new?filename=Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_NotifyResuming.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.NotifyResuming%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/src/Hosting/XamarinHostApplicationLifetime.cs/#L58">View Source</a>
+  </span>
+  <a id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_NotifyResuming_" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.NotifyResuming*"></a>
+  <h4 id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_NotifyResuming" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.NotifyResuming">NotifyResuming()</h4>
+  <div class="markdown level1 summary"><p>Signals the ApplicationResuming event and blocks until it completes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifyResuming()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jamiewest/XamarinFormsHost/new/master/apiSpec/new?filename=Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_NotifySleeping.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.NotifySleeping%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/src/Hosting/XamarinHostApplicationLifetime.cs/#L39">View Source</a>
+  </span>
+  <a id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_NotifySleeping_" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.NotifySleeping*"></a>
+  <h4 id="Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime_NotifySleeping" data-uid="Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime.NotifySleeping">NotifySleeping()</h4>
+  <div class="markdown level1 summary"><p>Signals the ApplicationSleeping event and blocks until it completes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void NotifySleeping()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Microsoft.Extensions.Hosting.IApplicationLifetime</span>
+  </div>
+  <div>
+      <a class="xref" href="Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime.html">IXamarinHostApplicationLifetime</a>
+  </div>
+  <div>
+      <span class="xref">Microsoft.Extensions.Hosting.IHostApplicationLifetime</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jamiewest/XamarinFormsHost/new/master/apiSpec/new?filename=Microsoft_Extensions_Hosting_XamarinHostApplicationLifetime.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jamiewest/XamarinFormsHost/blob/master/src/Hosting/XamarinHostApplicationLifetime.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+             
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
