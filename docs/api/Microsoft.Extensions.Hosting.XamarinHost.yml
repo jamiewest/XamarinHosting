@@ -20,10 +20,12 @@ items:
       repo: https://github.com/jamiewest/XamarinFormsHost.git
     id: XamarinHost
     path: ../src/Hosting/XamarinHost.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - West.Extensions.XamarinHosting
   namespace: Microsoft.Extensions.Hosting
+  summary: "\nProvides convenience methods for creating instances of <xref href=\"Microsoft.Extensions.Hosting.IHost\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Microsoft.Extensions.Hosting.IHostBuilder\" data-throw-if-not-resolved=\"false\"></xref> with pre-configured defaults.\n"
+  example: []
   syntax:
     content: public static class XamarinHost
     content.vb: Public Module XamarinHost
@@ -62,18 +64,22 @@ items:
       repo: https://github.com/jamiewest/XamarinFormsHost.git
     id: CreateDefaultBuilder
     path: ../src/Hosting/XamarinHost.cs
-    startLine: 9
+    startLine: 17
   assemblies:
   - West.Extensions.XamarinHosting
   namespace: Microsoft.Extensions.Hosting
+  summary: "\nInitializes a new instance of the <xref href=\"Microsoft.Extensions.Hosting.IHostBuilder\" data-throw-if-not-resolved=\"false\"></xref> class with pre-configured defaults.\n"
+  example: []
   syntax:
     content: >-
       public static IHostBuilder CreateDefaultBuilder<TApplication>()
           where TApplication : class
     typeParameters:
     - id: TApplication
+      description: The type contianing the static <xref href="Microsoft.Extensions.Hosting.IHost" data-throw-if-not-resolved="false"></xref> method.
     return:
       type: Microsoft.Extensions.Hosting.IHostBuilder
+      description: The initialized <xref href="Microsoft.Extensions.Hosting.IHostBuilder" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Shared Function CreateDefaultBuilder(Of TApplication As Class) As IHostBuilder
   overload: Microsoft.Extensions.Hosting.XamarinHost.CreateDefaultBuilder*
   nameWithType.vb: XamarinHost.CreateDefaultBuilder(Of TApplication)()
@@ -86,6 +92,20 @@ items:
   fullName.vb: Microsoft.Extensions.Hosting.XamarinHost.CreateDefaultBuilder(Of TApplication)()
   name.vb: CreateDefaultBuilder(Of TApplication)()
 references:
+- uid: Microsoft.Extensions.Hosting.IHost
+  commentId: T:Microsoft.Extensions.Hosting.IHost
+  parent: Microsoft.Extensions.Hosting
+  isExternal: true
+  name: IHost
+  nameWithType: IHost
+  fullName: Microsoft.Extensions.Hosting.IHost
+- uid: Microsoft.Extensions.Hosting.IHostBuilder
+  commentId: T:Microsoft.Extensions.Hosting.IHostBuilder
+  parent: Microsoft.Extensions.Hosting
+  isExternal: true
+  name: IHostBuilder
+  nameWithType: IHostBuilder
+  fullName: Microsoft.Extensions.Hosting.IHostBuilder
 - uid: Microsoft.Extensions.Hosting
   commentId: N:Microsoft.Extensions.Hosting
   name: Microsoft.Extensions.Hosting
@@ -388,10 +408,3 @@ references:
   name: CreateDefaultBuilder
   nameWithType: XamarinHost.CreateDefaultBuilder
   fullName: Microsoft.Extensions.Hosting.XamarinHost.CreateDefaultBuilder
-- uid: Microsoft.Extensions.Hosting.IHostBuilder
-  commentId: T:Microsoft.Extensions.Hosting.IHostBuilder
-  parent: Microsoft.Extensions.Hosting
-  isExternal: true
-  name: IHostBuilder
-  nameWithType: IHostBuilder
-  fullName: Microsoft.Extensions.Hosting.IHostBuilder

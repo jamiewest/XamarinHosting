@@ -10,8 +10,12 @@
     name: ILifecycleRegister
   - uid: Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
     name: IXamarinHostApplicationLifetime
+  - uid: Microsoft.Extensions.Hosting.IXamarinHostedService
+    name: IXamarinHostedService
   - uid: Microsoft.Extensions.Hosting.LifecycleRegister
     name: LifecycleRegister
+  - uid: Microsoft.Extensions.Hosting.XamarinBackgroundService
+    name: XamarinBackgroundService
   - uid: Microsoft.Extensions.Hosting.XamarinHost
     name: XamarinHost
   - uid: Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime

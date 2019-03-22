@@ -511,7 +511,11 @@ references:
   fullName: System
 - uid: Microsoft.Extensions.Hosting.IHostedService
   commentId: T:Microsoft.Extensions.Hosting.IHostedService
+  parent: Microsoft.Extensions.Hosting
   isExternal: true
+  name: IHostedService
+  nameWithType: IHostedService
+  fullName: Microsoft.Extensions.Hosting.IHostedService
 - uid: Microsoft.Extensions.Hosting.HostBuilderExtensions.UseHostedService*
   commentId: Overload:Microsoft.Extensions.Hosting.HostBuilderExtensions.UseHostedService
   name: UseHostedService

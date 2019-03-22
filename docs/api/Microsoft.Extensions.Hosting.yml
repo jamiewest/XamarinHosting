@@ -8,7 +8,9 @@ items:
   - Microsoft.Extensions.Hosting.HostExtensions
   - Microsoft.Extensions.Hosting.ILifecycleRegister
   - Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
+  - Microsoft.Extensions.Hosting.IXamarinHostedService
   - Microsoft.Extensions.Hosting.LifecycleRegister
+  - Microsoft.Extensions.Hosting.XamarinBackgroundService
   - Microsoft.Extensions.Hosting.XamarinHost
   - Microsoft.Extensions.Hosting.XamarinHostApplicationLifetime
   - Microsoft.Extensions.Hosting.XamarinHostLifetime
@@ -35,6 +37,17 @@ references:
   name: IXamarinHostApplicationLifetime
   nameWithType: IXamarinHostApplicationLifetime
   fullName: Microsoft.Extensions.Hosting.IXamarinHostApplicationLifetime
+- uid: Microsoft.Extensions.Hosting.IXamarinHostedService
+  commentId: T:Microsoft.Extensions.Hosting.IXamarinHostedService
+  parent: Microsoft.Extensions.Hosting
+  name: IXamarinHostedService
+  nameWithType: IXamarinHostedService
+  fullName: Microsoft.Extensions.Hosting.IXamarinHostedService
+- uid: Microsoft.Extensions.Hosting.XamarinBackgroundService
+  commentId: T:Microsoft.Extensions.Hosting.XamarinBackgroundService
+  name: XamarinBackgroundService
+  nameWithType: XamarinBackgroundService
+  fullName: Microsoft.Extensions.Hosting.XamarinBackgroundService
 - uid: Microsoft.Extensions.Hosting.HostBuilderExtensions
   commentId: T:Microsoft.Extensions.Hosting.HostBuilderExtensions
   name: HostBuilderExtensions

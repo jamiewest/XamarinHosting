@@ -230,7 +230,7 @@ items:
       repo: https://github.com/jamiewest/XamarinFormsHost.git
     id: NotifyResuming
     path: ../src/Hosting/XamarinHostApplicationLifetime.cs
-    startLine: 58
+    startLine: 57
   assemblies:
   - West.Extensions.XamarinHosting
   namespace: Microsoft.Extensions.Hosting

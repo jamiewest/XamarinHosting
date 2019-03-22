@@ -20,7 +20,7 @@ items:
       branch: master
       repo: https://github.com/jamiewest/XamarinFormsHost.git
     id: IXamarinHostApplicationLifetime
-    path: ../../src/Abstractions/IXamarinHostApplicationLifetime.cs
+    path: ../src/Abstractions/IXamarinHostApplicationLifetime.cs
     startLine: 5
   assemblies:
   - West.Extensions.XamarinHosting.Abstractions
@@ -61,7 +61,7 @@ items:
       branch: master
       repo: https://github.com/jamiewest/XamarinFormsHost.git
     id: ApplicationSleeping
-    path: ../../src/Abstractions/IXamarinHostApplicationLifetime.cs
+    path: ../src/Abstractions/IXamarinHostApplicationLifetime.cs
     startLine: 10
   assemblies:
   - West.Extensions.XamarinHosting.Abstractions
@@ -96,7 +96,7 @@ items:
       branch: master
       repo: https://github.com/jamiewest/XamarinFormsHost.git
     id: ApplicationResuming
-    path: ../../src/Abstractions/IXamarinHostApplicationLifetime.cs
+    path: ../src/Abstractions/IXamarinHostApplicationLifetime.cs
     startLine: 15
   assemblies:
   - West.Extensions.XamarinHosting.Abstractions

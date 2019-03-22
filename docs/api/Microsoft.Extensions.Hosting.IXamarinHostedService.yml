@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Extensions.Hosting.IXamarinHostedService
+  commentId: T:Microsoft.Extensions.Hosting.IXamarinHostedService
+  id: IXamarinHostedService
+  parent: Microsoft.Extensions.Hosting
+  children:
+  - Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync(System.Threading.CancellationToken)
+  - Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IXamarinHostedService
+  nameWithType: IXamarinHostedService
+  fullName: Microsoft.Extensions.Hosting.IXamarinHostedService
+  type: Interface
+  source:
+    remote:
+      path: src/Abstractions/IXamarinHostedService.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: IXamarinHostedService
+    path: ../src/Abstractions/IXamarinHostedService.cs
+    startLine: 8
+  assemblies:
+  - West.Extensions.XamarinHosting.Abstractions
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nDefines methods for objects that are managed by the host.\n"
+  example: []
+  syntax:
+    content: 'public interface IXamarinHostedService : IHostedService'
+    content.vb: >-
+      Public Interface IXamarinHostedService
+
+          Inherits IHostedService
+  inheritedMembers:
+  - Microsoft.Extensions.Hosting.IHostedService.StartAsync(System.Threading.CancellationToken)
+  - Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync(System.Threading.CancellationToken)
+  commentId: M:Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync(System.Threading.CancellationToken)
+  id: SleepAsync(System.Threading.CancellationToken)
+  parent: Microsoft.Extensions.Hosting.IXamarinHostedService
+  langs:
+  - csharp
+  - vb
+  name: SleepAsync(CancellationToken)
+  nameWithType: IXamarinHostedService.SleepAsync(CancellationToken)
+  fullName: Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Abstractions/IXamarinHostedService.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: SleepAsync
+    path: ../src/Abstractions/IXamarinHostedService.cs
+    startLine: 14
+  assemblies:
+  - West.Extensions.XamarinHosting.Abstractions
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nTriggered when the application host is ready to sleep.\n"
+  example: []
+  syntax:
+    content: Task SleepAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Indicates that the sleep process has been aborted.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SleepAsync(cancellationToken As CancellationToken) As Task
+  overload: Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync*
+- uid: Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync(System.Threading.CancellationToken)
+  commentId: M:Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync(System.Threading.CancellationToken)
+  id: ResumeAsync(System.Threading.CancellationToken)
+  parent: Microsoft.Extensions.Hosting.IXamarinHostedService
+  langs:
+  - csharp
+  - vb
+  name: ResumeAsync(CancellationToken)
+  nameWithType: IXamarinHostedService.ResumeAsync(CancellationToken)
+  fullName: Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Abstractions/IXamarinHostedService.cs
+      branch: master
+      repo: https://github.com/jamiewest/XamarinFormsHost.git
+    id: ResumeAsync
+    path: ../src/Abstractions/IXamarinHostedService.cs
+    startLine: 20
+  assemblies:
+  - West.Extensions.XamarinHosting.Abstractions
+  namespace: Microsoft.Extensions.Hosting
+  summary: "\nTriggered when the application host is ready to resume.\n"
+  example: []
+  syntax:
+    content: Task ResumeAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Indicates that the resume process has been aborted.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function ResumeAsync(cancellationToken As CancellationToken) As Task
+  overload: Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync*
+references:
+- uid: Microsoft.Extensions.Hosting
+  commentId: N:Microsoft.Extensions.Hosting
+  name: Microsoft.Extensions.Hosting
+  nameWithType: Microsoft.Extensions.Hosting
+  fullName: Microsoft.Extensions.Hosting
+- uid: Microsoft.Extensions.Hosting.IHostedService.StartAsync(System.Threading.CancellationToken)
+  commentId: M:Microsoft.Extensions.Hosting.IHostedService.StartAsync(System.Threading.CancellationToken)
+  parent: Microsoft.Extensions.Hosting.IHostedService
+  isExternal: true
+  name: StartAsync(CancellationToken)
+  nameWithType: IHostedService.StartAsync(CancellationToken)
+  fullName: Microsoft.Extensions.Hosting.IHostedService.StartAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Hosting.IHostedService.StartAsync(System.Threading.CancellationToken)
+    name: StartAsync
+    nameWithType: IHostedService.StartAsync
+    fullName: Microsoft.Extensions.Hosting.IHostedService.StartAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Hosting.IHostedService.StartAsync(System.Threading.CancellationToken)
+    name: StartAsync
+    nameWithType: IHostedService.StartAsync
+    fullName: Microsoft.Extensions.Hosting.IHostedService.StartAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
+  commentId: M:Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
+  parent: Microsoft.Extensions.Hosting.IHostedService
+  isExternal: true
+  name: StopAsync(CancellationToken)
+  nameWithType: IHostedService.StopAsync(CancellationToken)
+  fullName: Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
+    name: StopAsync
+    nameWithType: IHostedService.StopAsync
+    fullName: Microsoft.Extensions.Hosting.IHostedService.StopAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
+    name: StopAsync
+    nameWithType: IHostedService.StopAsync
+    fullName: Microsoft.Extensions.Hosting.IHostedService.StopAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Hosting.IHostedService
+  commentId: T:Microsoft.Extensions.Hosting.IHostedService
+  parent: Microsoft.Extensions.Hosting
+  isExternal: true
+  name: IHostedService
+  nameWithType: IHostedService
+  fullName: Microsoft.Extensions.Hosting.IHostedService
+- uid: Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync*
+  commentId: Overload:Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync
+  name: SleepAsync
+  nameWithType: IXamarinHostedService.SleepAsync
+  fullName: Microsoft.Extensions.Hosting.IXamarinHostedService.SleepAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync*
+  commentId: Overload:Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync
+  name: ResumeAsync
+  nameWithType: IXamarinHostedService.ResumeAsync
+  fullName: Microsoft.Extensions.Hosting.IXamarinHostedService.ResumeAsync

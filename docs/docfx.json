@@ -29,8 +29,8 @@
       },
       {
         "files": [
-          "articles/**.md",
-          "articles/**/toc.yml",
+          "docs/**.md",
+          "docs/**/toc.yml",
           "toc.yml",
           "*.md"
         ]
@@ -39,7 +39,10 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "resources/svg/logo.svg",
+          "resources/png/logo.png",
+          "resources/ico/favicon.ico"
         ]
       }
     ],
@@ -58,13 +61,20 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "./theme"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false
+    "disableGitFeatures": false,
+    "globalMetadata": {
+      "_appFooter": " ",
+      "_appTitle": "Xamarin Hosting Documentation",
+      "_appLogoPath": "resources/svg/logo.svg",
+      "_appFaviconPath": "resources/ico/favicon.ico"
+    }
   }
 }
