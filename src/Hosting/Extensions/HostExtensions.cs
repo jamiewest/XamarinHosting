@@ -65,7 +65,7 @@ namespace Microsoft.Extensions.Hosting
             logger.Sleeping();
         }
 
-        // <summary>
+        /// <summary>
         /// Resumes the host synchronously.
         /// </summary>
         /// <param name="host">The <see cref="IHost"/> that is being extended.</param>
