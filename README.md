@@ -1,3 +1,9 @@
+This archive is not actively maintained and has become outdated, I will try to update when I am able. Please also see the following reasources regarding using a `Generic Host` in Xamarin Forms.
+
+[Add ASP.NET Core's Dependency Injection into Xamarin Apps with HostBuilder](https://montemagno.com/add-asp-net-cores-dependency-injection-into-xamarin-apps-with-hostbuilder/)
+
+[Another example from James](https://github.com/jamesmontemagno/AllExtensions-DI-IoC/blob/master/AllExtensions/AllExtensions/Startup.cs)
+
 # Xamarin.Forms Generic Host
 [![Build status](https://dev.azure.com/jamiewest/XamarinHosting/_apis/build/status/XamarinHosting-CI)](https://dev.azure.com/jamiewest/XamarinHosting/_build/latest?definitionId=28)
 
